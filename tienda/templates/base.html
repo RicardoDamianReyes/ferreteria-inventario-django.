@@ -18,8 +18,8 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                 {% if user.is_authenticated %}
                     <li class="nav-item"><span class="navbar-text text-white">Hola, {{ user.username }}</span></li>
-                    <li class="nav-item"><a class="btn btn-success btn-sm" href="#">+ Nuevo Producto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Clientes</a></li>
+                    <li class="nav-item"><a class="btn btn-success btn-sm" href="{% url 'producto_crear' %}">+ Nuevo Producto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cliente_lista' %}">Clientes</a></li>
                     <li class="nav-item">
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}

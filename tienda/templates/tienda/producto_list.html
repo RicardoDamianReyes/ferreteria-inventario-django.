@@ -38,6 +38,12 @@
                     </p>
                     <p class="card-text text-muted small mb-0">Código: {{ p.codigo_barras }}</p>
                 </div>
+                {% if user.is_authenticated %}
+                <div class="card-footer bg-white d-flex gap-2">
+                    <a href="{% url 'producto_editar' p.pk %}" class="btn btn-sm btn-outline-primary">Editar</a>
+                    <a href="{% url 'producto_eliminar' p.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     {% empty %}
