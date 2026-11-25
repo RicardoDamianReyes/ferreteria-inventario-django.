@@ -20,6 +20,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
     codigo_barras = models.CharField("código de barras", max_length=50, unique=True)
+    imagen = models.ImageField(upload_to='productos/', null=True, blank=True)
 
     class Meta:
         ordering = ["nombre"]
